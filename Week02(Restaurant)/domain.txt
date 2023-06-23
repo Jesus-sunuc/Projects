@@ -1,0 +1,56 @@
+Restaurant:
+- Menu
+- CustomerQueue
+- Customers (only those waiting in line)
+- Cashier (cash register)
+
+    Menu:
+    - List of MenuItems
+
+        MenuItem:
+        - title
+        - cost
+
+    Customer Queue:
+    - tracks customers (only those waiting in line)
+    - needs to receive new Customers
+    - needs to provide the next Customer
+
+        Customer:
+        - Wallet?
+        - has an DesiredOrder
+
+            DesiredOrder:
+            - list of MenuItems
+            - needs to calculate total`
+
+            Wallet:
+            - Cash, might be zero
+            - Credit Card?
+
+                Credit Card:
+                - withdraw amount ($$)
+
+    Cashier:
+    - needs to fulfill a CustomerOrder
+        - obtain money from Customers DesiredOrder
+        - if insufficient money, throw Customer out of Restaurant
+    - OrderHistory
+
+        OrderHistory: 
+        - keep track of the previous CustomeOrder
+        - order of CustomerOrders is insignificant
+
+            CustomeOrders:
+            - transaction
+            - list of ordered MenuItems
+
+                Transaction:
+                - date
+                - amount
+                - payment method
+
+UserInterface:
+- manage the console on behalf of the program
+- handle user input
+- own menus to display to the user 
