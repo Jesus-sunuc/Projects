@@ -7,6 +7,11 @@ class program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("");
+        MenuItem? toast = MenuItem.Create("toast", 351);
+
+        if(toast == null)
+        {
+           return;
+        }
     }
 }
