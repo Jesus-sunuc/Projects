@@ -54,3 +54,12 @@ UserInterface:
 - manage the console on behalf of the program
 - handle user input
 - own menus to display to the user 
+
+main program:
+output customers in line
+serve next user
+print total history with a total
+
+
+
+****Transaction class needs to be fixed, the whole program is not working because of that****
