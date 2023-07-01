@@ -4,4 +4,3 @@
 - Information Hiding
 - Abstraction
 - Inheritance
-- 
