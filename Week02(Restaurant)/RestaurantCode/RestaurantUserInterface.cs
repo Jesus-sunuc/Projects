@@ -51,7 +51,7 @@ public class RestaurantUserInterface
         return output;
     }
 
-    public string DisplayMenu()
+    public string? DisplayMenu()
     {
         return @"
         Welcome to the Restaurant
@@ -62,6 +62,7 @@ public class RestaurantUserInterface
         q. Quit
         ";
     }
+    
 
     public string? ProcessUserInput(string userInput)
     {

@@ -1,6 +1,6 @@
 public class Cat : Animal
 {
-    public Cat() : base(1, 1.5)
+    public Cat() : base(1, 1.5, "Tim")
     {
 
     }
