@@ -33,49 +33,48 @@ public class Board
         };
     }
 
-public override string ToString()
-{
-    var output = "\r\n  +-+-+-+-+-+-+-+-+\r\n";
-    for (var i = 0; i < MaxRowCount; i++)
+    public override string ToString()
     {
-        var thisRow = $"{i + 1} |";
-        for (var j = 0; j < MaxColCount; j++)
+        var output = "\r\n  +-+-+-+-+-+-+-+-+\r\n";
+        for (var i = 0; i < MaxRowCount; i++)
         {
-            var piece = GetPiece(i, j);
-            if (piece.ID == -1)
+            var thisRow = $"{i + 1} |";
+            for (var j = 0; j < MaxColCount; j++)
             {
-                thisRow += " |";
-            }
-            else
-            {
-                if (piece.Player == Players.Black)
+                var piece = GetPiece(i, j);
+                if (piece.ID == -1)
                 {
-                    thisRow += "Y|";
+                    thisRow += " |";
                 }
                 else
                 {
-                    thisRow += "X|";
+                    if (piece.Player == Players.Black)
+                    {
+                        thisRow += "Y|";
+                    }
+                    else
+                    {
+                        thisRow += "X|";
+                    }
                 }
             }
+
+            output += thisRow;
+            output += "\r\n  +-+-+-+-+-+-+-+-+\r\n";
         }
-
-        output += thisRow;
-        output += "\r\n  +-+-+-+-+-+-+-+-+\r\n";
+        output += "   a b c d e f g h\r\n";
+        return output;
     }
-    output += "   a b c d e f g h\r\n";
-    return output;
-}
 
-private CheckersPiece GetPiece(int row, int col)
-{
-    foreach (var piece in board)
+    private CheckersPiece GetPiece(int row, int col)
     {
-        if (piece.Row == row && piece.Column == col)
+        foreach (var piece in board)
         {
-            return piece;
+            if (piece.Row == row && piece.Column == col)
+            {
+                return piece;
+            }
         }
+        return new CheckersPiece() { ID = -1 };
     }
-    return new CheckersPiece() { ID = -1 };
-}
-
 }
